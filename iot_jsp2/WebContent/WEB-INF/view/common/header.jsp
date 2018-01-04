@@ -4,7 +4,7 @@
 <%
 String loginMenu = "Login";
 String loginUrl = rootPath + "/view/user/login";
-if(userId!=null){
+if(user!=null){
 	loginMenu = "Logout";
 	loginUrl = rootPath + "/user/logout";
 }
