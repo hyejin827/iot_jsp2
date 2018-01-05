@@ -2,6 +2,7 @@ package com.iot.test.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.servlet.RequestDispatcher;
@@ -13,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.iot.test.service.UserService;
 import com.iot.test.service.impl.UserServiceImpl;
+import com.iot.test.vo.UserClass;
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 public class UserServlet extends HttpServlet {
 	
@@ -51,6 +54,14 @@ public class UserServlet extends HttpServlet {
 			us.logout(req);
 			RequestDispatcher rd = req.getRequestDispatcher("/view/user/login");
 			rd.forward(req, res);
+		}else if(cmd.equals("signin")) {
+			//System.out.println(uc);
+			//out.println(gs.toJson(uc));
+			us.signin(req);
+			out.println(req.getAttribute("resStr"));
+		}else if(cmd.equals("list")) {
+			ArrayList<UserClass> userList = us.getUserList();
+			out.println(gs.toJson(userList));
 		}
 	}
 }
