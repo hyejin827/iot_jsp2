@@ -7,7 +7,7 @@
 </head>
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/list.css" />
 <body>
-	<jsp:include page="/WEB-INF/view/common/header.jsp" flush="false" />
+	<jsp:include page="/WEB-INF/view/common/header2.jsp" flush="false" />
 <br>
 	<div class="container">
 	    <div class="row">
