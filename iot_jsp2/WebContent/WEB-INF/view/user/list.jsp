@@ -5,9 +5,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/list.css" />
+<link rel="stylesheet" href="<%=rootPath%>/ui/css/list2.css" />
 <body>
-	<jsp:include page="/WEB-INF/view/common/header2.jsp" flush="false" />
+	<jsp:include page="/WEB-INF/view/common/header.jsp" flush="false" />
 <br>
 	<div class="container">
 	    <div class="row">

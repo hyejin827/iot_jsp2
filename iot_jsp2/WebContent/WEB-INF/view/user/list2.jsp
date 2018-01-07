@@ -1,53 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/list2.css" />
+<link rel="stylesheet" href="<%=rootPath%>/ui/css/style_list.css" />
 <body>
-	<jsp:include page="/WEB-INF/view/common/header2.jsp" flush="false" />
-<br>
-	<div class="container">
-	    <div class="row">
-	    
-	        <div class="col-md-10 col-md-offset-1">
-	
-	            <div class="panel panel-default panel-table">
-	              <div class="panel-heading">
-	                <div class="row">
-	                  <div class="col col-xs-6">
-	                    <h3 class="panel-title">User List</h3>
-	                  </div>
-	                  <div class="col col-xs-6 text-right">
-	                  	<input type="text" class="input">
-	                    <button type="button" class="btn btn-sm btn-primary btn-create">검색</button>
-	                  </div>
-	                </div>
-	              </div>
-	              <div class="panel-body">
-	                <table class="table table-striped table-bordered table-list">
-	                  	<thead>
-		                    <tr>
-		                        <th class="text-center">번호</th>
-		                        <th class="text-center">이름</th>
-		                        <th class="text-center">나이</th>
-		                        <th class="text-center">ID</th>
-		                        <th class="text-center">가입일자</th>
-		                        <th class="text-center">주소</th>
-		                        <th class="text-center"><em class="glyphicon glyphicon-asterisk"></em></th>
-		                    </tr>  
-	                  	</thead>
-	                  	<tbody id="result_tb">
-						</tbody>
-	                </table>
-	              </div>
-	            </div>
-			</div>
-		</div>
-	</div>
+	<jsp:include page="/WEB-INF/view/common/header.jsp" flush="false" />
+
+	<table class="myTable myTable-rounded">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>나이</th>
+				<th>ID</th>
+				<th>가입일자</th>
+				<th>주소</th>
+				<th><em class="glyphicon glyphicon-asterisk"></em></th>
+			</tr>
+		</thead>
+		<tbody id="result_tb">
+		</tbody>
+	</table>
 </body>
+
+
 <script>
 $(document).ready(function(){
 	$.ajax({
@@ -78,4 +58,5 @@ $(document).ready(function(){
 	
 });
 </script>
+
 </html>

@@ -6,31 +6,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login</title>
 </head>
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/sign.css" />
+<link rel="stylesheet" href="<%=rootPath%>/ui/css/style_login.css" />
+<link rel="stylesheet" href="<%=rootPath%>/ui/css/btn.css" />
 <body>
-	<jsp:include page="/WEB-INF/view/common/header2.jsp" flush="false" />
+	<jsp:include page="/WEB-INF/view/common/header.jsp" flush="false" />
 	<div class="result_div"></div>
-	<div class="container">
-		<div class="starter-template">
-		
-			<form class="form-signin">
-				<h2 id="hText2" class="form-signin-heading">로그인</h2>
+		<div class="wrapper">
+			<form class="form-signin">       
+				<h2 id="hText2" class="form-signin-heading">Please login</h2>
+					<input type="text" class="form-control" id="userId" name="userId" placeholder="Email Address" required="" autofocus="" />
+					<input type="password" class="form-control" id="userPwd" name="userPwd" placeholder="Password" required=""/>      
+					<label class="checkbox">
+						<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+					</label>
 				
-				<label for="userId" class="sr-only">ID</label> 
-				<input type="text" id="userId" name="userId" class="form-control"
-					placeholder="ID" autofocus>
-					
-				<label for="userPwd" class="sr-only">Password</label> 
-				<input type="password" id="userPwd" name="userPwd" class="form-control"
-					placeholder="Password">
-					
-				<input class="btn btn-lg btn-primary btn-block" type="button"
-					id="loginBtn" value="Login" onclick="checkValue()">
-					
-				<a href="/view/user/signin">회원가입</a>
+					<div class="ph-container">
+					    <div class="ph-float">
+					        <button class="ph-button ph-btn-grey" type="button" id="loginBtn" value="Login" onclick="checkValue()" >Login</button>
+					    </div>   
+					</div>    
+					<div class="ph-clear"></div>  
+
+
+
+				<a href="/view/user/signin" class="signin">회원가입</a>   
 			</form>
 		</div>
-	</div>
 </body>
 <script>
 

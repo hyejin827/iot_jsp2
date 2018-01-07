@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+.myTable {
+	border: solid 1px #DDEEEE;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font: normal 13px Arial, sans-serif;
+	margin: 80px auto;
+	width: 900px;
+}
+
+.myTable thead th {
+	background-color: #DDEFEF;
+	border: solid 1px #DDEEEE;
+	color: #333;
+	padding: 10px;
+	text-align: center;
+	text-shadow: 1px 1px 1px #fff;
+	font-size: 18px;
+}
+
+.myTable tbody td {
+	border: solid 1px #DDEEEE;
+	color: #5F6975;
+	padding: 10px;
+	text-shadow: 1px 1px 1px #fff;
+	font-size: 15px;
+}
+
+.myTable-rounded {
+	border: none;
+}
+
+.myTable-rounded thead th {
+	background: #ededed;
+	border: none;
+	text-shadow: 1px 1px 1px #ccc;
+	color: #464D56;
+}
+
+.myTable-rounded thead th:first-child {
+	border-radius: 10px 0 0 0;
+}
+
+.myTable-rounded thead th:last-child {
+	border-radius: 0 10px 0 0;
+}
+
+.myTable-rounded tbody td {
+	border: none;
+	border-top: solid 1px #E0E0E0;
+	border-left: solid 1px #e0e0e0;
+	background-color: #FFFFFF;
+}
+
+.myTable-rounded tbody tr:last-child td:first-child {
+	border-radius: 0 0 0 10px;
+}
+
+.myTable-rounded tbody tr:last-child td:last-child {
+	border-radius: 0 0 10px 0;
+}

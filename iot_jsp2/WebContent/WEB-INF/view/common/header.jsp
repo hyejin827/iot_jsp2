@@ -13,23 +13,11 @@ if(user!=null){
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/bootstrap.min.css">
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/common.css">
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="<%=rootPath%>/">Home</a></li>
+<link rel="stylesheet" href="<%=rootPath%>/ui/css/style_header.css">
+    <nav>
+        <ul>
+            <li><a href=<%=rootPath%>/>Home</a></li>
             <li><a href="<%=loginUrl%>"><%=loginMenu%></a></li>
-            <li><a href="<%=rootPath%>/view/user/list">User List</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+            <li><a href="<%=rootPath%>/view/user/list2">User List</a></li>
+        </ul>
     </nav>
