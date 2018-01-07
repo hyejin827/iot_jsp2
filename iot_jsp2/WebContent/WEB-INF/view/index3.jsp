@@ -9,13 +9,13 @@ if(user==null){
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>IOT_TEST</title>
 </head>
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/style_index.css" />
+<link rel="stylesheet" href="<%=rootPath%>/ui/css/style2.css" />
 <body>
 	<jsp:include page="/WEB-INF/view/common/header2.jsp" flush="false" />
-    <div class="wrapper">
+    <div class="container">
 
-      <div class="form-signin">
-        <h1 class="form-signin-heading"><%=user.getUiName()%>님 환영합니다.</h1>
+      <div class="starter-template">
+        <h1><%=user.getUiName()%>님 환영합니다.</h1>
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
       </div>
     </div><!-- /.container -->

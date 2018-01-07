@@ -5,12 +5,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/sign.css" />
+<link rel="stylesheet" href="<%=rootPath%>/ui/css/style_signin.css" />
 <body>
 	<jsp:include page="/WEB-INF/view/common/header2.jsp" flush="false" />
 
 	<div class="container">
-		<div class="starter-template">
+		<div class="wrapper">
 
 			<form class="form-signin">
 				<table class="table">
@@ -44,7 +44,7 @@
 					<tr>
 						<th>주소</th>
 						<td><input type="text" id="address" name="address"
-							class="form-control" placeholder="주소"></td>
+							class="form-control" placeholder="주소" ></td>
 					</tr>
 					<tr>
 						<td colspan="2"> 

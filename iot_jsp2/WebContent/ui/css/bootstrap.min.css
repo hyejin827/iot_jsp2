@@ -3367,7 +3367,7 @@ select[multiple].form-group-lg .form-control, textarea.form-group-lg .form-contr
 .btn-primary {
 	color: #fff;
 	background-color: #337ab7;
-	border-color: #2e6da4
+	border-color: #2e6da4;
 }
 
 .btn-primary.active, .btn-primary.focus, .btn-primary:active,
@@ -5817,9 +5817,9 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus,
 }
 
 .panel-title {
-	margin-top: 0;
+	margin-top: 6;
 	margin-bottom: 0;
-	font-size: 16px;
+	font-size: 25px;
 	color: inherit
 }
 

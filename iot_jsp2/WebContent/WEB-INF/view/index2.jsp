@@ -9,7 +9,7 @@ if(user==null){
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>IOT_TEST</title>
 </head>
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/style_index.css" />
+<link rel="stylesheet" href="<%=rootPath%>/ui/css/style2.css" />
 <body>
 	<jsp:include page="/WEB-INF/view/common/header2.jsp" flush="false" />
     <div class="wrapper">
