@@ -18,6 +18,6 @@ if(user!=null){
         <ul>
             <li><a href=<%=rootPath%>/>Home</a></li>
             <li><a href="<%=loginUrl%>"><%=loginMenu%></a></li>
-            <li><a href="<%=rootPath%>/view/user/list2">User List</a></li>
+            <li><a href="<%=rootPath%>/view/user/list">User List</a></li>
         </ul>
     </nav>
