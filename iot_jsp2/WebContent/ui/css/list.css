@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-.panel-table{
-	margin-top: 45px
-}
-
 .panel-table .panel-body{
   padding:0;
 }
@@ -58,12 +54,13 @@ used to vertically center elements, may need modification if you're not using de
 }
 
 /*여기임*/
-.panel-table .panel-title{
-	background-color: #D5D5D5;
+
+.panel-table{
+	margin-top: 45px
 }
 
 .panel-table thead th{
-	background-color: #D5D5D5;
+	background-color: #EEEEEE;
 }
 
 .panel-table tbody td{
