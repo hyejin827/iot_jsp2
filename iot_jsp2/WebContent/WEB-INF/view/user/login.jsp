@@ -22,7 +22,7 @@
 				
 					<div class="ph-container">
 					    <div class="ph-float">
-					        <button class="ph-button ph-btn-grey" type="button" id="loginBtn" value="Login" onclick="checkValue()" >Login</button>
+					        <button class="ph-button ph-btn-grey" type="button" id="loginBtn" value="Login" onclick="checkValue()" >LOGIN</button>
 					    </div>   
 					</div>    
 					<div class="ph-clear"></div>  

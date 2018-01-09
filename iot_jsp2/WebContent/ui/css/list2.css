@@ -53,12 +53,10 @@ used to vertically center elements, may need modification if you're not using de
   line-height: 34px;
 }
 
-.panel-table .panel-body[]
-
 /*여기임*/
 
 .panel-table{
-	margin-top: 80px;
+	margin-top: 80px
 }
 
 .panel-table thead th{

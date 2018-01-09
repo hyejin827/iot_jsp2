@@ -50,7 +50,7 @@
 					<tr>
 						<td colspan="2"> 
 							<input class="ph-button ph-btn-grey " type="button"
-								id="singnBtn" value="Signin" onclick="signin()">
+								id="singnBtn" value="SIGN IN" onclick="signin()">
 						</td>
 					</tr>
 				</table>
