@@ -1,23 +1,31 @@
+<%@page import="com.iot.test.vo.UserClass"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+String rootPath = request.getContextPath();
+UserClass user = (UserClass)session.getAttribute("user");
 String loginMenu = "Login";
 String loginUrl = rootPath + "/view/user/login";
 if(user!=null){
 	loginMenu = "Logout";
 	loginUrl = rootPath + "/user/logout";
 }
+String uri = request.getRequestURI();
+int idx = uri.lastIndexOf(".");
+if(idx!=-1){
+	uri = uri.substring(8, idx);
+}
 %>
-<script src="<%=rootPath%>/ui/js/jquery-3.2.1.js"></script>
-<script src="<%=rootPath%>/ui/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/bootstrap.min.css">
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/common.css">
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/style_header.css">
+<script>
+$(document).ready(function(){
+	$("li a [href='<%=uri%>']").parent().attr("class","active");
+})
+</script>
     <nav>
         <ul>
             <li><a href=<%=rootPath%>/>Home</a></li>
             <li><a href="<%=loginUrl%>"><%=loginMenu%></a></li>
             <li><a href="<%=rootPath%>/view/user/list">User List</a></li>
+            <li><a href="<%=rootPath%>/view/class/classlist">Class List</a></li>
         </ul>
     </nav>

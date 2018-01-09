@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/list.css" />
+<link rel="stylesheet" href="<%=rootPath%>/ui/css/classlist.css" />
 <body>
-	<jsp:include page="/WEB-INF/view/common/header.jspf" flush="false" />
-	<br>
-	<div class="container">
+<jsp:include page="/WEB-INF/view/common/header.jspf" flush="false" />
+<div class="container">
 		<div class="row">
 
 			<div class="col-md-10 col-md-offset-1">
@@ -18,7 +18,7 @@
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col col-xs-6">
-								<h3 class="panel-title">User List</h3>
+								<h3 class="panel-title">Class List</h3>
 							</div>
 							<div class="col col-xs-6 text-right">
 								<input type="text" class="input">
@@ -27,15 +27,12 @@
 						</div>
 					</div>
 					<div class="panel-body">
-						<table id="grid1" data-key="uiNo" class="table table-striped table-bordered table-list">
+						<table id="grid1" data-key="ciNo" class="table table-striped table-bordered table-list">
 							<thead>
 								<tr>
-									<th class="text-center" data-field="uiNo,ro">번호</th>
-									<th class="text-center" data-field="uiName,txt">이름</th>
-									<th class="text-center" data-field="uiAge,txt">나이</th>
-									<th class="text-center" data-field="uiId,ro">ID</th>
-									<th class="text-center" data-field="uiRegdate,ro">가입일자</th>
-									<th class="text-center" data-field="address,txt">주소</th>
+									<th class="text-center" data-field="ciNo,ro">번호</th>
+									<th class="text-center" data-field="ciName,txt">이름</th>
+									<th class="text-center" data-field="ciDesc,txt">반</th>
 									<th class="text-center" data-field="BTN"><em
 										class="glyphicon glyphicon-asterisk"></em></th>
 								</tr>
@@ -50,14 +47,13 @@
 	</div>
 </body>
 <script>
-function updateUser(uiNo){
-	var uiName = $("#uiName" + uiNo).val().trim();
-	var uiAge = $("#uiAge" + uiNo).val().trim();
-	var address = $("#address" + uiNo).val().trim();
-	var param = {uiNo:uiNo, uiName:uiName, uiAge:uiAge, address:address};
+function updateClass(ciNo){
+	var ciName = $("#ciName" + ciNo).val().trim();
+	var ciDesc = $("#ciDesc" + ciNo).val().trim();
+	var param = {ciNo:ciNo, ciName:ciName, ciDesc:ciDesc};
 	param = "param=" + JSON.stringify(param);
 		$.ajax({
-			url : '/user/update',
+			url : '/class/update',
 			type : 'post',
 			data : param,
 			dataType : 'json',
@@ -73,12 +69,12 @@ function updateUser(uiNo){
 		})
 }
 
-function deleteUser(uiNo){
+function deleteClass(ciNo){
 	var isDelete = confirm("진짜 지우게?");
-	var param= "uiNo="+uiNo;
+	var param= "ciNo="+ciNo;
 	if(isDelete){
 		$.ajax({
-			url : '/user/delete',
+			url : '/class/delete',
 			type : 'post',
 			data : param,
 			dataType : 'json',
@@ -103,7 +99,7 @@ $(document).ready(function(){
 	}
 	var keyCol =$("#grid1").attr("data-key");
 	$.ajax({
-		url : '/user/list',
+		url : '/class/list',
 		type : 'get',
 		success:function(res){
 			var list = JSON.parse(res);
@@ -114,8 +110,8 @@ $(document).ready(function(){
 				for(var field of colsInfo){
 					str += "<td class='text-center'>";
 					if(field=="BTN"){
-						str += '<a class="btn btn-default" onclick="updateUser('+key+')"><em class="glyphicon glyphicon-refresh"></em></a>';
-						str += '<a class="btn btn-default" onclick="deleteUser('+key+')"><em class="glyphicon glyphicon-trash"></em></a>';
+						str += '<a class="btn btn-default" onclick="updateClass('+key+')"><em class="glyphicon glyphicon-refresh"></em></a>';
+						str += '<a class="btn btn-default" onclick="deleteClass('+key+')"><em class="glyphicon glyphicon-trash"></em></a>';
 					}else{
 						var colName = field.split(",")[0];
 						var colType = field.split(",")[1];

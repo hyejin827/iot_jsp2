@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/style_signin.css" />
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/btn_signin.css" />
 <body>
-	<jsp:include page="/WEB-INF/view/common/header.jsp" flush="false" />
+	<jsp:include page="/WEB-INF/view/common/header.jspf" flush="false" />
 
 	<div class="container">
 		<div class="wrapper">
