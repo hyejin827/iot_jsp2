@@ -40,6 +40,7 @@
 							<tbody id="result_tb">
 							</tbody>
 						</table>
+						<button style="float: right;" ><a href="<%=rootPath%>/view/class/insert">추가하기</a></button>
 					</div>
 				</div>
 			</div>

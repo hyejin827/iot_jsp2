@@ -32,8 +32,8 @@ public class JspServlet extends HttpServlet {
 	public void doProcess(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		PrintWriter out = res.getWriter();
 		String uri = req.getRequestURI();
-		uri = "/WEB-INF/" + uri + ".jsp";
+		uri = "/WEB-INF" + uri + ".jsp";
 		RequestDispatcher rd = req.getRequestDispatcher(uri);
-		rd.forward(req, res);
+		rd.forward(req, res); 
 	}
 }
