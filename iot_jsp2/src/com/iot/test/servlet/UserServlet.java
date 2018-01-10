@@ -45,7 +45,7 @@ public class UserServlet extends HttpServlet {
 		String uri = req.getRequestURI();
 		String cmd = getCommand(uri);
 		if(cmd.equals("login")) {
-			HashMap<String, Object> hm = us.login(req);
+			HashMap<String, Object> hm = us.login(req,res);
 			out.println(gs.toJson(hm));
 		}else if(cmd.equals("logout")) {
 			us.logout(req);

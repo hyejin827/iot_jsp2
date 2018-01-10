@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/list2.css" />
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/list.css" />
 <body>
 <jsp:include page="/WEB-INF/view/common/header.jspf" flush="false" />
 <div class="container">
@@ -31,9 +30,9 @@
 						<table id="grid1" data-key="ciNo" class="table table-striped table-bordered table-list">
 							<thead>
 								<tr>
-									<th class="text-center" data-field="ciNo,ro">번호</th>
-									<th class="text-center" data-field="ciName,txt">이름</th>
-									<th class="text-center" data-field="ciDesc,txt">반</th>
+									<th class="text-center" data-field="ciNo,ro">Number</th>
+									<th class="text-center" data-field="ciName,txt">Class Name</th>
+									<th class="text-center" data-field="ciDesc,txt">Description</th>
 									<th class="text-center" data-field="BTN"><em
 										class="glyphicon glyphicon-asterisk"></em></th>
 								</tr>
@@ -41,7 +40,7 @@
 							<tbody id="result_tb">
 							</tbody>
 						</table>
-						<button style="float: right;" ><a href="<%=rootPath%>/view/class/insert">추가하기</a></button>
+						<button style="float: right;" ><a href="<%=rootPath%>/view/class/insert">Insert</a></button>
 					</div>
 				</div>
 			</div>

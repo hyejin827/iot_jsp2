@@ -16,36 +16,36 @@
 			<form class="form-signin">
 				<table class="table">
 					<tr>
-						<th>이름</th>
+						<th>Name</th>
 						<td><input type="text" id="uiName" name="uiName"
-							class="form-control" placeholder="이름" autofocus></td>
+							class="form-control" placeholder="Name" autofocus></td>
 					</tr>
 					<tr>
-						<th>나이</th>
+						<th>Age</th>
 						<td><input type="text" id="uiAge" name="uiAge"
-							class="form-control" placeholder="나이"></td>
+							class="form-control" placeholder="Age"></td>
 					</tr>
 					<tr>
-						<th>아이디</th>
+						<th>ID</th>
 						<td><input type="text" id="uiId" name="uiId"
-							class="form-control" placeholder="아이디"></td>
+							class="form-control" placeholder="ID"></td>
 					</tr>
 					<tr>
-						<th>비밀번호</th>
+						<th>Password</th>
 						<td><input type="password" id="uiPwd" name="uiPwd"
-							class="form-control" placeholder="비밀번호"></td>
+							class="form-control" placeholder="Password"></td>
 					</tr>
 					<tr>
-						<th>반</th>
+						<th>Class</th>
 						<td>
 							<select name="ciNo" id="ciNo" class="form-control">
 							</select>
 						</td>
 					</tr>
 					<tr>
-						<th>주소</th>
+						<th>Address</th>
 						<td><input type="text" id="address" name="address"
-							class="form-control" placeholder="주소" ></td>
+							class="form-control" placeholder="Address" ></td>
 					</tr>
 					<tr>
 						<td colspan="2"> 

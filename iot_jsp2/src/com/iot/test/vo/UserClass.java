@@ -11,6 +11,7 @@ public class UserClass {
 	private String uiPwd;
 	private String uiRegdate;
 	private String address;
+	private boolean saveId;
 	
 	public int getCiNo() {
 		return ciNo;
@@ -73,10 +74,16 @@ public class UserClass {
 		this.address = address;
 	}
 	
+	public boolean isSavedId() {
+		return saveId;
+	}
+	public void setSavedId(boolean saveId) {
+		this.saveId = saveId;
+	}
 	@Override
 	public String toString() {
 		return "UserClass [ciNo=" + ciNo + ", ciName=" + ciName + ", ciDesc=" + ciDesc + ", uiNo=" + uiNo + ", uiName="
 				+ uiName + ", uiAge=" + uiAge + ", uiId=" + uiId + ", uiPwd=" + uiPwd + ", uiRegdate=" + uiRegdate
-				+ ", address=" + address + "]";
+				+ ", address=" + address + ", saveId=" + saveId + "]";
 	}
 }

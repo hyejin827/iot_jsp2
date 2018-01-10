@@ -14,10 +14,10 @@
 		<div class="wrapper">
 			<form class="form-signin">       
 				<h2 id="hText2" class="form-signin-heading">Please login</h2>
-					<input type="text" class="form-control" id="userId" name="userId" placeholder="Email Address" required="" autofocus="" />
+					<input type="text" class="form-control" id="userId" name="userId" placeholder="ID" required="" autofocus="" />
 					<input type="password" class="form-control" id="userPwd" name="userPwd" placeholder="Password" required=""/>      
 					<label class="checkbox">
-						<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+						<input type="checkbox" id="saveId" name="saveId"> Remember me
 					</label>
 				
 					<div class="ph-container">
@@ -29,7 +29,7 @@
 
 
 
-				<a href="/view/user/signin" class="signin">회원가입</a>   
+				<a href="/view/user/signin" class="signin">Sign In</a>   
 			</form>
 		</div>
 </body>
@@ -39,6 +39,7 @@ function checkValue(){
 	var objs = $(".container");
 	var userId = $("#userId").val().trim();
 	var userPwd = $("#userPwd").val().trim();
+	var saveId = $("#saveId").prop("checked");
 	if(userId.length<3){
 		alert("유저아이디 확인해!!");
 		$("#userId").focus();
@@ -49,7 +50,7 @@ function checkValue(){
 		$("#userPwd").focus();
 		return;
 	}
-	var param = {uiId:userId, uiPwd:userPwd};
+	var param = {uiId:userId, uiPwd:userPwd, saveId:saveId};
 	
 	param = "param=" + encodeURIComponent(JSON.stringify(param));
 	$.ajax({
@@ -65,5 +66,30 @@ function checkValue(){
 		}
 	})
 }
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+$(document).ready(function(){
+   var userId = getCookie("userId");
+   var saveId = getCookie("saveId");
+   if(userId){
+      $("#userId").val(userId);
+      $("#saveId").prop("checked",true);
+   }
+});
 </script>
 </html>

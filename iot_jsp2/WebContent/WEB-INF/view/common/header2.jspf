@@ -21,20 +21,11 @@ $(document).ready(function(){
 	$("li a [href='<%=uri%>']").parent().attr("class","active");
 })
 </script>
-    
-	<nav>
-	  <ul>
-	    <li>
-	      <a href="<%=rootPath%>/">Home</a>
-	    </li>
-	    <li>
-	      <a href="<%=loginUrl%>"><%=loginMenu%></a>
-	    </li>
-	    <li>
-	      <a href="<%=rootPath%>/view/user/list">User List</a>
-	    </li>
-	    <li>
-	      <a href="<%=rootPath%>/view/class/classlist">Class List</a>
-	    </li>
-	  </ul>
-	</nav>
+    <nav>
+        <ul>
+            <li><a href="<%=rootPath%>/">Home</a></li>
+            <li><a href="<%=loginUrl%>"><%=loginMenu%></a></li>
+            <li><a href="<%=rootPath%>/view/user/list">User List</a></li>
+            <li><a href="<%=rootPath%>/view/class/classlist">Class List</a></li>
+        </ul>
+    </nav>

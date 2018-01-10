@@ -22,7 +22,7 @@
 							</div>
 							<div class="col col-xs-6 text-right">
 								<input type="text" class="input">
-								<button type="button" class="btn btn-sm btn-primary btn-create">검색</button>
+								<button type="button" class="btn btn-sm btn-primary btn-create" onclick="search()">검색</button>
 							</div>
 						</div>
 					</div>
@@ -30,12 +30,12 @@
 						<table id="grid1" data-key="uiNo" class="table table-striped table-bordered table-list">
 							<thead>
 								<tr>
-									<th class="text-center" data-field="uiNo,ro">번호</th>
-									<th class="text-center" data-field="uiName,txt">이름</th>
-									<th class="text-center" data-field="uiAge,txt">나이</th>
+									<th class="text-center" data-field="uiNo,ro">Number</th>
+									<th class="text-center" data-field="uiName,txt">Name</th>
+									<th class="text-center" data-field="uiAge,txt">Age</th>
 									<th class="text-center" data-field="uiId,ro">ID</th>
-									<th class="text-center" data-field="uiRegdate,ro">가입일자</th>
-									<th class="text-center" data-field="address,txt">주소</th>
+									<th class="text-center" data-field="uiRegdate,ro">Regdate</th>
+									<th class="text-center" data-field="address,txt">Address</th>
 									<th class="text-center" data-field="BTN"><em
 										class="glyphicon glyphicon-asterisk"></em></th>
 								</tr>

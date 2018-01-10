@@ -16,12 +16,12 @@
 			<form class="form-signin">
 				<table class="table">
 					<tr>
-						<th>이름</th>
+						<th>Class Name</th>
 						<td><input type="text" id="ciName" name="ciName"
 							class="form-control" placeholder="ciName" autofocus></td>
 					</tr>
 					<tr>
-						<th>반</th>
+						<th>Description</th>
 						<td><input type="text" id="ciDesc" name="ciDesc"
 							class="form-control" placeholder="ciDesc"></td>
 					</tr>
