@@ -21,7 +21,7 @@
 								<h3 class="panel-title">User List</h3>
 							</div>
 							<div class="col col-xs-6 text-right">
-								<input type="text" class="input">
+								<input type="text" id="search" class="input" placeholder="Enter UserID">
 								<button type="button" class="btn btn-sm btn-primary btn-create" onclick="search()">검색</button>
 							</div>
 						</div>
@@ -122,7 +122,7 @@ $(document).ready(function(){
 						if(colType=="ro"){
 							str += uc[colName];
 						}else{
-							str += "<input type='text' class='form-control' id='" + colName + key + "' value='" + uc[colName] + "'>";
+							str += "<input type='text' class='form-control go' id='" + colName + key + "' value='" + uc[colName] + "'>";
 						}
 					}
 					str += "</td>";
@@ -137,5 +137,52 @@ $(document).ready(function(){
 	});
 	
 });
+
+
+function search(){
+	var colsInfo = [];
+	var param = "param=" +	$("#search").val();
+	var colList = $("#grid1 th[data-field]");
+	for(var i=0; i<colList.length;i++){
+		colsInfo.push(colList[i].getAttribute("data-field")); //push는 add랑 같은거
+	}
+	var keyCol =$("#grid1").attr("data-key");
+	$.ajax({
+		url : '/user/search',
+		type : 'get',
+		data : param,
+		dataType : 'json',
+		success:function(res){
+			alert(res);
+			var list = JSON.parse(res);
+			var str ="";
+			for(var uc of list){
+				var key = uc[keyCol];
+				str +="<tr>";
+				for(var field of colsInfo){
+					str += "<td class='text-center'>";
+					if(field=="BTN"){
+						str += '<a class="btn btn-default" onclick="updateUser('+key+')"><em class="glyphicon glyphicon-refresh"></em></a>';
+						str += '<a class="btn btn-default" onclick="deleteUser('+key+')"><em class="glyphicon glyphicon-trash"></em></a>';
+					}else{
+						var colName = field.split(",")[0];
+						var colType = field.split(",")[1];
+						if(colType=="ro"){
+							str += uc[colName];
+						}else{
+							str += "<input type='text' class='form-control' id='" + colName + key + "' value='" + uc[colName] + "'>";
+						}
+					}
+					str += "</td>";
+				}
+				str += "</tr>";
+			}
+			$("#result_tb").html(str);
+		},
+		error:function(xhr,status,error){
+			
+		}
+	});
+}
 </script>
 </html>

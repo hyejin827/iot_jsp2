@@ -110,5 +110,13 @@ public class UserServiceImpl implements UserService{
 		}
 		return gs.toJson(rm);	
 	}
+
+	@Override
+	public UserClass getUser(HttpServletRequest req) {
+		String uiId = req.getParameter("uiId");
+		UserClass uc = new UserClass();
+		uc.setUiId(uiId);
+		return ud.selectUser(uiId);	
+	}
 	
 }

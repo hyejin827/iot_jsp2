@@ -132,7 +132,7 @@ public class UserDAOImpl implements UserDAO {
 		ResultSet rs = null;
 		try {
 			con = DBCon.getCon();
-			String sql = "select * from user_info ui, class_info ci where ui.cino=ci.cino and ui.uiid=?";
+			String sql = "select *, date_format(uiregdate,'%Y-%m-%d') as rdate from user_info ui, class_info ci where ui.cino=ci.cino and ui.uiId=? order by ui.uino";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, uiId);
 			rs = ps.executeQuery();
