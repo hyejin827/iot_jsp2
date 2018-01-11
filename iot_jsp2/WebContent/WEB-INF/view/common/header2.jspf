@@ -10,22 +10,31 @@ if(user!=null){
 	loginMenu = "Logout";
 	loginUrl = rootPath + "/user/logout";
 }
+
 String uri = request.getRequestURI();
 int idx = uri.lastIndexOf(".");
 if(idx!=-1){
-	uri = uri.substring(8, idx);
+	uri = uri.substring(8,idx);
 }
-%>
+%> 
 <script>
 $(document).ready(function(){
-	$("li a [href='<%=uri%>']").parent().attr("class","active");
+	$("li a[href='<%=uri%>']").parent().attr("class","active");
 })
 </script>
-    <nav>
-        <ul>
-            <li><a href="<%=rootPath%>/">Home</a></li>
-            <li><a href="<%=loginUrl%>"><%=loginMenu%></a></li>
-            <li><a href="<%=rootPath%>/view/user/list">User List</a></li>
-            <li><a href="<%=rootPath%>/view/class/classlist">Class List</a></li>
-        </ul>
-    </nav>
+	<nav>
+	  <ul >
+	    <li>
+	      <a href="<%=rootPath%>/">Home</a>
+	    </li>
+	    <li>
+	      <a href="<%=loginUrl%>"><%=loginMenu%></a>
+	    </li>
+	    <li>
+	      <a href="<%=rootPath%>/view/user/list">User List</a>
+	    </li>
+	    <li>
+	      <a href="<%=rootPath%>/view/class/classlist">Class List</a>
+	    </li>
+	  </ul>
+	</nav>

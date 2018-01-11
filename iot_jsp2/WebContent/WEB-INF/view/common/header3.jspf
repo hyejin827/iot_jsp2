@@ -12,6 +12,7 @@ if(user!=null){
 }
 
 String uri = request.getRequestURI();
+System.out.print(uri);
 int idx = uri.lastIndexOf(".");
 if(idx!=-1){
 	uri = uri.substring(8,idx);
@@ -26,9 +27,9 @@ $(document).ready(function(){
     <div class="nav">
       <ul>
         <li class="home"><a href="<%=rootPath%>/">Home</a></li>
-        <li class="login"><a class="active" href="<%=loginUrl%>"><%=loginMenu%></a></li>
-        <li class="userlist"><a href="<%=rootPath%>/view/user/list">User List</a></li>
-        <li class="classlist"><a href="<%=rootPath%>/view/class/classlist">Class List</a></li>
+        <li class="bio"><a href="<%=loginUrl%>"><%=loginMenu%></a></li>
+        <li class="contact"><a href="<%=rootPath%>/view/user/list">User List</a></li>
+        <li class="contact"><a href="<%=rootPath%>/view/class/classlist">Class List</a></li>
       </ul>
     </div>
   </header>

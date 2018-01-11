@@ -1,43 +1,63 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@charset "UTF-8";
 
-body {
-  height:100%;
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    background: #8e9bab;
 }
 
 nav {
-  max-width: 960px;
-  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
-  margin: 0 auto;
-  padding: 0px 0;
+    margin: 0;
+    overflow: hidden;
+    text-align:center;
 }
 
 nav ul {
-  text-align: center;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
-  background-color: white;
+	background: #efefef;
+	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+	background: -webkit-linear-gradient(top, #efefef 0%, #bbbbbb 100%);
+	box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.15);
+	padding: 0 500px;
+	border-radius: 10px;
+	list-style: none;
+	position: relative;
+	display: inline-table;
+	line-height: 10px;
+}
+
+nav ul:after {
+	content: "";
+	clear: both;
+	display: block;
 }
 
 nav ul li {
-  display: inline-block;
+	float: left;
+}
+
+nav ul li:hover {
+	background: #4b545f;
+	background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
+	background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+	background: -webkit-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+	border-radius: 3px;
+}
+
+nav ul li:hover a {
+	color: #fff;
 }
 
 nav ul li a {
-  padding: 18px;
-  font-family: "Open Sans";
-  text-transform:uppercase;
-  color: rgba(0, 35, 122, 0.5);
-  font-size: 18px;
-  text-decoration: none;
-  display: block;
+	display: block;
+	padding: 25px 40px;
+	color: #757575;
+	text-decoration: none;
 }
 
-nav ul li a:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(0, 35, 122, 0.7);
-}
-
-nav ul li : active a {
-	background : black;
+.nav a.active {
+  background-color: #f7f8fa;
+  color: #019fc2;
+  cursor: default;
 }
