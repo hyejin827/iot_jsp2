@@ -38,3 +38,6 @@ nav ul li a:hover {
   color: rgba(0, 35, 122, 0.7);
 }
 
+nav ul li : active a {
+	background : black;
+}

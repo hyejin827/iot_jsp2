@@ -21,7 +21,7 @@
 								<h3 class="panel-title">User List</h3>
 							</div>
 							<div class="col col-xs-6 text-right">
-								<input type="text" id="search" class="input" placeholder="Enter UserID">
+								<input type="text" id="search" class="input" placeholder="Enter User Number">
 								<button type="button" class="btn btn-sm btn-primary btn-create" onclick="search()">검색</button>
 							</div>
 						</div>
@@ -141,7 +141,7 @@ $(document).ready(function(){
 
 function search(){
 	var colsInfo = [];
-	var param = "param=" +	$("#search").val();
+	var param = "param=" +	$("#search").val().trim();
 	var colList = $("#grid1 th[data-field]");
 	for(var i=0; i<colList.length;i++){
 		colsInfo.push(colList[i].getAttribute("data-field")); //push는 add랑 같은거
@@ -151,12 +151,10 @@ function search(){
 		url : '/user/search',
 		type : 'get',
 		data : param,
-		dataType : 'json',
 		success:function(res){
-			alert(res);
-			var list = JSON.parse(res);
 			var str ="";
-			for(var uc of list){
+			if(res.trim()!="null"){
+				var uc = JSON.parse(res);
 				var key = uc[keyCol];
 				str +="<tr>";
 				for(var field of colsInfo){
@@ -170,12 +168,14 @@ function search(){
 						if(colType=="ro"){
 							str += uc[colName];
 						}else{
-							str += "<input type='text' class='form-control' id='" + colName + key + "' value='" + uc[colName] + "'>";
+							str += "<input type='text' class='form-control go' id='" + colName + key + "' value='" + uc[colName] + "'>";
 						}
 					}
 					str += "</td>";
 				}
 				str += "</tr>";
+			}else{
+				alert("검색 결과가 없습니다.");
 			}
 			$("#result_tb").html(str);
 		},

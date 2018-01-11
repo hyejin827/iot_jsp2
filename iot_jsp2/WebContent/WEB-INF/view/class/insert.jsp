@@ -40,6 +40,18 @@
 function insert(){
 	var ciName = $("#ciName").val().trim();
 	var ciDesc = $("#ciDesc").val().trim();
+	
+	if(ciName.length<1){
+		alert("Class Name은 1글자 이상이여야 합니다.");
+		$("#ciName").focus();
+		return;
+	}
+	if(ciDesc.length<1){
+		alert("Description은 1글자 이상이여야 합니다.");
+		$("#ciDesc").focus();
+		return;
+	}
+	
 	var param= {ciName:ciName, ciDesc:ciDesc};
 	param = "param=" + JSON.stringify(param);
 	$.ajax({

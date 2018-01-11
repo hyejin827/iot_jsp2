@@ -21,7 +21,8 @@ public class UserDAOImpl implements UserDAO {
 		ResultSet rs = null;
 		try {
 			con = DBCon.getCon();
-			String sql = "select *, date_format(uiregdate,'%Y-%m-%d') as rdate from user_info ui, class_info ci where ui.cino=ci.cino order by ui.uino";
+			String sql = "select *, date_format(uiregdate,'%Y-%m-%d') as rdate from user_info ui, "
+					+ "class_info ci where ui.cino=ci.cino order by ui.uino";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while (rs.next()) {
@@ -47,7 +48,35 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public UserClass selectUser(int uiNo) {
+	public UserClass selectUser(String uiId) {
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			con = DBCon.getCon();
+			String sql = "select * from user_info ui, class_info ci where ui.cino = ci.cino and ui.uiid=?";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, uiId);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				UserClass uc = new UserClass();
+				uc.setAddress(rs.getString("address"));
+				uc.setCiDesc(rs.getString("cidesc"));
+				uc.setCiName(rs.getString("ciname"));
+				uc.setCiNo(rs.getInt("cino"));
+				uc.setUiAge(rs.getInt("uiage"));
+				uc.setUiId(rs.getString("uiid"));
+				uc.setUiName(rs.getString("uiname"));
+				uc.setUiNo(rs.getInt("uino"));
+				uc.setUiPwd(rs.getString("uipwd"));
+				uc.setUiRegdate(rs.getString("uiregdate"));
+				return uc;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.closeAll(rs,con,ps);
+		}
 		return null;
 	}
 
@@ -91,7 +120,6 @@ public class UserDAOImpl implements UserDAO {
 			ps.setInt(2, uc.getUiAge());
 			ps.setString(3, uc.getAddress());
 			ps.setInt(4, uc.getUiNo());
-			
 			return ps.executeUpdate();
 			
 		} catch (Exception e) {
@@ -126,15 +154,16 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public UserClass selectUser(String uiId) {
+	public UserClass selectUser(int uiNo) {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
 			con = DBCon.getCon();
-			String sql = "select *, date_format(uiregdate,'%Y-%m-%d') as rdate from user_info ui, class_info ci where ui.cino=ci.cino and ui.uiId=? order by ui.uino";
+			String sql = "select *, date_format(uiregdate,'%Y-%m-%d') as rdate from user_info ui, "
+					+ "class_info ci where ui.cino=ci.cino and ui.uiNo=? order by ui.uino";
 			ps = con.prepareStatement(sql);
-			ps.setString(1, uiId);
+			ps.setInt(1, uiNo);
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				UserClass uc = new UserClass();

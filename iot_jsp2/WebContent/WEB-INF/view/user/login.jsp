@@ -6,8 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login</title>
 </head>
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/style_login.css" />
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/btn.css" />
 <body>
 	<jsp:include page="/WEB-INF/view/common/header.jspf" flush="false" />
 	<div class="result_div"></div>
